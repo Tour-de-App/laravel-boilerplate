@@ -1,0 +1,33 @@
+name: Build and push to TdA
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build
+        uses: docker/build-push-action@v3
+        with:
+          context: ./
+          tags: tda-laravel:latest
+          outputs: type=docker,dest=/tmp/tda-laravel.tar
+
+      - name: Upload image as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: tda-laravel
+          path: /tmp/tda-laravel.tar
+
+      - name: Upload to TdA
+        uses: Tour-de-App/upload-app@62b5b39aad41859f86fc75779ddd929afcf71151
+        with:
+          team_secret: ${{ secrets.TEAM_SECRET }}
+          artifact_name: tda-laravel
