@@ -17,8 +17,4 @@ RUN docker-php-ext-install zip \
 
 COPY . /app
 
-WORKDIR /app
-
-RUN COMPOSER_ALLOW_SUPERUSER=1 composer install
-
 CMD ["/app/start.sh"]
