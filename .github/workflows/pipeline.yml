@@ -20,14 +20,9 @@ jobs:
           tags: tda-laravel:latest
           outputs: type=docker,dest=/tmp/tda-laravel.tar
 
-      - name: Upload image as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: tda-laravel
-          path: /tmp/tda-laravel.tar
-
       - name: Upload to TdA
-        uses: Tour-de-App/upload-app@62b5b39aad41859f86fc75779ddd929afcf71151
+        uses: Tour-de-App/upload-app@1079ded462c5c87ecd77039a955dda2e9db1d809
         with:
           team_secret: ${{ secrets.TEAM_SECRET }}
-          artifact_name: tda-laravel
+          image_name: tda-laravel
+          image_path: /tmp/tda-laravel.tar
