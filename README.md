@@ -7,11 +7,13 @@
 Prerekvizity
 
 #### Windows
-- Nainstalovaný [WSL2 (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install)
-- Nainstalovaný a běžící [Docker](https://www.docker.com/)
+
+-   Nainstalovaný [WSL2 (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install)
+-   Nainstalovaný a běžící [Docker](https://www.docker.com/)
 
 #### Linux / MacOS
-- Nainstalovaný a běžící [Docker](https://www.docker.com/)
+
+-   Nainstalovaný a běžící [Docker](https://www.docker.com/)
 
 ```
 docker build . -t tda-laravel
@@ -23,4 +25,5 @@ Aplikace bude následně přístupná na `http://localhost:8080`
 Součástí vytvořeného kontejneru je databáze běžící na portu 3306.
 
 ## Odevzdání
-V rámci GitHub akce se aplikace automaticky odevzdává, jediné co je potřeba udělat je v rámci repozitáře si nastavit svůj vlastní TEAM\_SECRET, který dostanete po registraci do soutěže.
+
+Jak odevzdat svojí aplikaci můžete najít v našich [vzdělávacích materiálech](https://tourde.app/vzdelavaci-materialy/jak-odevzdavat)
